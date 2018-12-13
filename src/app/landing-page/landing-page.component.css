@@ -1,0 +1,16 @@
+.container{
+    margin: 0 auto;
+    display: table;
+    text-align: center;
+}
+h3, h4{
+    font-weight: 400;
+}
+.btn{
+    margin: 20px auto;
+    background-color: #f8f9fb;
+    padding: 20px 115px;
+    display: table;
+    border-radius: 5px;
+    cursor: pointer;
+}

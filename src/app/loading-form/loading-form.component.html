@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="row">
+		<form [formGroup]="loaderForm">
+			<div class="col-left">
+				<div class="form-group">
+					<label for="">Select the loading time range (in seconds)</label>
+					<select [formControl]="loaderForm.controls['SELECT_TIME']" (change)="selectedTime($event)">
+						<option value="0-100" selected>0 - 100</option>
+						<option value="100-200">100 - 200</option>
+						<option value="200-500">200 - 500</option>
+						<option value="500-1000">500 - 1000</option>
+						<option value="1000-1500">1000 - 1500</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-right">
+				<div class="form-group">
+					<label for="">Select a Particular loading time</label>
+					<input type="range" class="slider" min="{{minValue}}" max="{{maxValue}}" (input)="rangeValue($event)" name="rangeInput">
+					<div class="min-value">{{minValue}} s</div>
+					<div class="max-value">{{maxValue}} s</div>
+				</div>
+				<div class="form-group">
+					<label class="switch">
+						<input type="checkbox" (change)="selectToggle($event)">
+						<span class="slider-toggle"></span>
+					</label>
+					<p>Enable the loading time as selected on slider </p>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<button class="btn" (click)="loadComponent()">Submit</button>
